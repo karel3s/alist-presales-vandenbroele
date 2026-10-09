@@ -1,0 +1,8 @@
+# local secrets and tooling
+.env
+.env.*
+.vercel
+.impeccable/review/
+.impeccable/live/sessions/
+.impeccable/live/roots.json
+node_modules
