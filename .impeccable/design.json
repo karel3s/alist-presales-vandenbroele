@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T00:00:00Z",
+  "title": "Design System: Vanden Broele Webshop",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "primary", "displayName": "Vanden Broele Navy", "canonical": "#163E65", "tonalRamp": ["#071A2D", "#0E2D4B", "#163E65", "#2A5580", "#2F6FA8", "#7FB4E6", "#BBD8F2", "#E3ECF4"] },
+      "navy-deep": { "role": "primary", "displayName": "Deep Navy", "canonical": "#0E2D4B", "tonalRamp": ["#08182A", "#0E2D4B", "#163E65", "#2A5580", "#4A6580", "#7F95AB", "#B9C6D3", "#DCE3EA"] },
+      "mint": { "role": "secondary", "displayName": "Action Mint", "canonical": "#2BEBCE", "tonalRamp": ["#0A6A5E", "#10A090", "#1CC9B0", "#2BEBCE", "#5BF1DA", "#9FEDE0", "#DDF9F4", "#F0FDFB"] },
+      "ground": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#F1F5F9", "tonalRamp": ["#4A6580", "#7F95AB", "#B9C6D3", "#DCE3EA", "#E4ECF4", "#EEF3F7", "#F1F5F9", "#F7F9FB"] },
+      "amber-ink": { "role": "tertiary", "displayName": "Backorder Amber", "canonical": "#7A4B00", "tonalRamp": ["#3D2500", "#7A4B00", "#B87400", "#E0A030", "#F0C060", "#F8DC9C", "#FFF1D6", "#FFF8EB"] },
+      "error": { "role": "tertiary", "displayName": "Signal Red", "canonical": "#B3261E", "tonalRamp": ["#5A120F", "#8A1D17", "#B3261E", "#D2584F", "#E58A83", "#F3B8B3", "#FCE9E7", "#FEF5F4"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Search band and page titles in Jost 600." },
+      "title": { "displayName": "Title", "purpose": "Section, sheet and summary heads in Jost 600." },
+      "body": { "displayName": "Body", "purpose": "Inter 14px with tabular numerals for all running content." },
+      "label": { "displayName": "Label", "purpose": "Table column heads and small meta in Inter 600." }
+    },
+    "shadows": [
+      { "name": "cover", "value": "0 1px 2px rgba(14,45,75,.3), 0 3px 8px rgba(14,45,75,.12)", "purpose": "Small cover thumbnails." },
+      { "name": "cover-lg", "value": "0 2px 4px rgba(14,45,75,.25), 0 12px 28px rgba(14,45,75,.22)", "purpose": "Large PDP cover." },
+      { "name": "popover", "value": "0 12px 32px rgba(14,45,75,.28), 0 2px 6px rgba(14,45,75,.12)", "purpose": "Filter menus." },
+      { "name": "sheet", "value": "-12px 0 40px rgba(14,45,75,.25)", "purpose": "Slide-over and basket drawer." },
+      { "name": "toast", "value": "0 8px 24px rgba(14,45,75,.35)", "purpose": "Confirmation toast." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All state transitions (200ms controls, 280-320ms sheets). Reduced motion collapses durations." },
+      { "name": "bump", "value": "scale 1 -> 1.35 -> 1 over 500ms", "purpose": "Basket count badge when an item is added." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "1100px" },
+      { "name": "sm", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Mint Button",
+      "kind": "button",
+      "refersTo": "button-mint",
+      "description": "Primary action: Zoeken, add to basket, checkout.",
+      "html": "<button class=\"ds-btn-mint\">Zoeken</button>",
+      "css": ".ds-btn-mint { background: #2BEBCE; color: #0B2A45; border: 1px solid transparent; border-radius: 999px; height: 44px; padding: 0 22px; font: 600 14px Inter, system-ui, sans-serif; cursor: pointer; transition: background .2s cubic-bezier(0.22,1,0.36,1), transform .2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-mint:hover { background: #5BF1DA; } .ds-btn-mint:active { transform: translateY(1px); } .ds-btn-mint:focus-visible { outline: 2px solid #163E65; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navy Button",
+      "kind": "button",
+      "refersTo": "button-navy",
+      "description": "Secondary solid action on light surfaces.",
+      "html": "<button class=\"ds-btn-navy\">Bestellen</button>",
+      "css": ".ds-btn-navy { background: #163E65; color: #fff; border: 1px solid transparent; border-radius: 999px; height: 44px; padding: 0 22px; font: 600 14px Inter, system-ui, sans-serif; cursor: pointer; transition: background .2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-navy:hover { background: #0E2D4B; } .ds-btn-navy:focus-visible { outline: 2px solid #163E65; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Low-emphasis action with a hairline outline.",
+      "html": "<button class=\"ds-btn-ghost\">Annuleren</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #163E65; border: 1px solid #B9C6D3; border-radius: 999px; height: 44px; padding: 0 22px; font: 600 14px Inter, system-ui, sans-serif; cursor: pointer; transition: background .2s, border-color .2s; } .ds-btn-ghost:hover { border-color: #163E65; background: #fff; } .ds-btn-ghost:focus-visible { outline: 2px solid #163E65; outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Large white field on the navy band; mint focus ring.",
+      "html": "<div class=\"ds-search\"><input type=\"text\" placeholder=\"Zoek op titel, auteur of ISBN\"></div>",
+      "css": ".ds-search { background: #163E65; padding: 16px; } .ds-search input { width: 100%; height: 54px; border-radius: 8px; border: 1px solid transparent; background: #fff; color: #000; padding: 0 16px; font: 400 16px Inter, system-ui, sans-serif; box-sizing: border-box; } .ds-search input::placeholder { color: #5A6F84; } .ds-search input:focus-visible { outline: 3px solid #2BEBCE; outline-offset: 1px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Applied filter, mint-soft with a pale mint border.",
+      "html": "<span class=\"ds-chip\">Strafrecht <button aria-label=\"Verwijder\">&times;</button></span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; background: #DDF9F4; color: #0E2D4B; border: 1px solid #9FEDE0; border-radius: 999px; padding: 4px 6px 4px 12px; font: 500 14px Inter, system-ui, sans-serif; } .ds-chip button { border: 0; background: transparent; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; color: inherit; } .ds-chip button:hover { background: #fff; } .ds-chip button:focus-visible { outline: 2px solid #163E65; outline-offset: 2px; }"
+    },
+    {
+      "name": "Order Sheet Row",
+      "kind": "card",
+      "refersTo": "order-sheet",
+      "description": "Signature dense row: cover, title, price, stock, quantity and add.",
+      "html": "<div class=\"ds-sheet\"><div class=\"ds-row\"><span class=\"ds-cover\"></span><div><b class=\"ds-title\">Arbeidsrecht in de praktijk</b><div class=\"ds-meta\">J. Jansen · 978-90-0000-000-0</div></div><div class=\"ds-price\">&euro; 89,00<small>&euro; 94,34 incl.</small></div><span class=\"ds-stock\">Op voorraad</span><button class=\"ds-add\">Toevoegen</button></div></div>",
+      "css": ".ds-sheet { background: #fff; border: 1px solid #DCE3EA; border-radius: 8px; overflow: hidden; font: 400 14px/1.5 Inter, system-ui, sans-serif; color: #0F3252; font-variant-numeric: tabular-nums; } .ds-row { display: grid; grid-template-columns: 44px 1fr auto auto auto; gap: 16px; align-items: center; padding: 12px 14px; } .ds-row:hover { background: #F7FAFC; } .ds-cover { width: 44px; aspect-ratio: 5/7; border-radius: 3px; background: #163E65; box-shadow: 0 1px 2px rgba(14,45,75,.3), 0 3px 8px rgba(14,45,75,.12); } .ds-title { font: 600 17px/1.2 Jost, sans-serif; color: #163E65; } .ds-meta { color: #4A6580; font-size: 13px; margin-top: 3px; } .ds-price { font-weight: 600; text-align: right; } .ds-price small { display: block; font-weight: 400; color: #4A6580; } .ds-stock { display: inline-flex; align-items: center; gap: 7px; font-weight: 500; } .ds-stock::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: #0A6A5E; } .ds-add { height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: #2BEBCE; color: #0B2A45; font: 600 14px Inter, sans-serif; cursor: pointer; } .ds-add:hover { background: #5BF1DA; } .ds-add:focus-visible { outline: 2px solid #163E65; outline-offset: 2px; }"
+    },
+    {
+      "name": "Quantity Stepper",
+      "kind": "custom",
+      "refersTo": "button-ghost",
+      "description": "Pill stepper beside the add button.",
+      "html": "<div class=\"ds-qty\"><button aria-label=\"Minder\">&minus;</button><input value=\"1\" aria-label=\"Aantal\"><button aria-label=\"Meer\">+</button></div>",
+      "css": ".ds-qty { display: inline-flex; align-items: center; border: 1px solid #B9C6D3; border-radius: 999px; background: #fff; height: 38px; } .ds-qty button { width: 34px; height: 36px; border: 0; background: transparent; border-radius: 999px; color: #163E65; cursor: pointer; } .ds-qty button:hover { background: #F1F5F9; } .ds-qty input { width: 40px; text-align: center; border: 0; background: transparent; font: 600 14px Inter, sans-serif; height: 36px; } .ds-qty button:focus-visible, .ds-qty input:focus-visible { outline: 2px solid #163E65; outline-offset: -2px; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "button-navy",
+      "description": "Navy bar with white links, mint current-page underline and an outlined cart pill with a mint count.",
+      "html": "<div class=\"ds-top\"><nav><a href=\"#\" aria-current=\"page\">Webshop</a><a href=\"#\">Snelbestelling</a></nav><button class=\"ds-cart\">Mand <span>3</span></button></div>",
+      "css": ".ds-top { background: #163E65; color: #fff; display: flex; align-items: center; gap: 28px; padding: 14px 24px; font: 500 14px Inter, sans-serif; } .ds-top nav { display: flex; gap: 22px; flex: 1; } .ds-top a { color: #fff; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; } .ds-top a:hover { border-bottom-color: #2A5580; } .ds-top a[aria-current=page] { border-bottom-color: #2BEBCE; } .ds-top a:focus-visible, .ds-cart:focus-visible { outline: 2px solid #2BEBCE; outline-offset: 2px; } .ds-cart { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #fff; border: 1px solid #2A5580; border-radius: 999px; padding: 8px 16px; cursor: pointer; font: inherit; } .ds-cart:hover { background: #0E2D4B; border-color: #2BEBCE; } .ds-cart span { background: #2BEBCE; color: #0E2D4B; border-radius: 999px; min-width: 22px; height: 22px; display: inline-grid; place-items: center; font-size: 12px; font-weight: 700; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Order Desk",
+    "overview": "A shop built as a desk where work gets done, not a window where books are displayed. A committed navy shell (top bar, search band, quick-order panel, footer) frames a single white order sheet on a cool, navy-tinted ground. The sheet's dense, aligned rows (small cover, title, format, price excl., price incl., stock, quantity and add) are the product. Mint appears only where the buyer acts or where state changes.\n\nDensity is deliberate: 14px body, 12px to 14px row padding, tabular numerals so price columns align and can be compared in one scan. Warmth comes from pill-shaped controls and the Jost headings, not from decoration. The system is recognisable with content removed: navy band, mint pills, aligned price columns.",
+    "keyCharacteristics": [
+      "Navy shell, white sheet, cool ground (#F1F5F9) with navy-tinted shadows.",
+      "Mint reserved for actions and state; never a surface or cover colour.",
+      "Jost headings over Inter body, tabular numerals everywhere.",
+      "8px radius on fields and panels, full pills on buttons, chips, quantity steppers and toasts.",
+      "Procedural per-subject covers in navy, teal, slate and paper tones."
+    ],
+    "rules": [
+      { "name": "The Mint Means Act Rule", "body": "Mint marks something the buyer can do or something that just changed (action, count, selection, current page, added). It never fills a cover plate, a card background or a decorative band. Text on white uses mint-ink, never mint.", "section": "colors" },
+      { "name": "The Navy Shell Rule", "body": "Brand colour is carried by the shell, not by content. Content sits on paper.", "section": "colors" },
+      { "name": "The Aligned Numbers Rule", "body": "Tabular numerals are set on body; money and quantity columns are right-aligned. Never let prices sit in proportional figures.", "section": "typography" },
+      { "name": "The Soft Navy Shadow Rule", "body": "Shadows are blurred, navy-tinted and used only for floating layers and covers. No hard offset shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep mint for actions and state, and use mint-ink for any mint-family text on white.",
+      "Do right-align money and quantities with tabular numerals, and show excl. and incl. 6% VAT together.",
+      "Do keep the shell navy and content on white paper over the #F1F5F9 ground.",
+      "Do use 8px for fields and panels, full pills for buttons, chips and steppers.",
+      "Do tint all shadows navy and keep them for floating layers and covers.",
+      "Do swap in ITC Avant Garde Gothic through the existing font chain when licensed; Jost is the disclosed stand-in."
+    ],
+    "donts": [
+      "Don't use mint as a cover plate, card background or decorative fill.",
+      "Don't build a cover-grid storefront with a hero banner; the list is an order sheet.",
+      "Don't set prices in proportional figures or left-align them.",
+      "Don't use hard offset shadows or coloured side-stripe borders.",
+      "Don't put brand navy on content surfaces; it belongs to the shell."
+    ]
+  }
+}

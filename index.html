@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webshop Vanden Broele</title>
+<meta name="description" content="Prototype van de Vanden Broele webshop: zoeken, titels vergelijken en bestellen voor lokale besturen.">
+<link rel="icon" href="assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="top">
+  <div class="top__in">
+    <a class="top__logo" href="#/" aria-label="Vanden Broele, naar de webshop"><img src="assets/logo-light.svg" alt="Vanden Broele" height="30"></a>
+    <nav class="top__nav" aria-label="Hoofdmenu">
+      <a href="#/" aria-current="page">Boeken en kalenders</a>
+      <a href="https://opleidingen.vandenbroele.be/" rel="noopener">Opleidingen</a>
+      <a href="https://www.vandenbroele.be/nl-be/digitale-oplossingen/" rel="noopener">Digitaal</a>
+      <a href="https://www.vandenbroele.be/nl-be/samenwerking" rel="noopener">Adverteren</a>
+      <a href="https://www.vandenbroele.be/nl-be/contacteer-ons/" rel="noopener">Contact</a>
+    </nav>
+    <button class="cartbtn" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="drawer">
+      <span class="cartbtn__ico" data-ico="cart"></span>
+      <span class="cartbtn__txt">Mand</span>
+      <span class="cartbtn__n" id="cartCount">0</span>
+      <span class="cartbtn__sum" id="cartSum">€ 0,00</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <p class="foot__demo"><strong>Demo-inhoud.</strong> Titels, auteurs, prijzen en voorraad in dit prototype zijn fictief. Prijzen tonen 6% btw.</p>
+    <nav aria-label="Voettekst">
+      <a href="https://www.vandenbroele.be/nl-be/" rel="noopener">Algemene voorwaarden</a>
+      <a href="https://www.vandenbroele.be/nl-be/" rel="noopener">Toegankelijkheid</a>
+      <a href="https://www.vandenbroele.be/nl-be/contacteer-ons/" rel="noopener">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Slide-over for product detail and drawer for basket -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="pdpPanel" role="dialog" aria-modal="true" aria-labelledby="pdpPanelTitle" hidden></aside>
+<aside class="sheet sheet--drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden></aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
