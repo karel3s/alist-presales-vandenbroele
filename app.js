@@ -232,7 +232,7 @@
 
   function renderFilters(keepOpen) {
     var el = $("#filters"); if (!el) return;
-    var defs = [["aut", "Auteur", AUTHORS], ["doel", "Doelgroep", VB.DOELGROEPEN], ["mat", "Materie", VB.MATERIES], ["vorm", "Vorm", VB.VORMEN]];
+    var defs = [["aut", "Auteur", AUTHORS], ["mat", "Materie", VB.MATERIES], ["doel", "Doelgroep", VB.DOELGROEPEN], ["vorm", "Vorm", VB.VORMEN]];
     el.innerHTML = defs.map(function (d) {
       var sel = selCount(d[0]), open = S.openMenu === d[0];
       return '<div class="fmenu"><button class="fbtn" type="button" data-act="menu" data-facet="' + d[0] + '" aria-expanded="' + open + '" aria-controls="pop-' + d[0] + '">' +

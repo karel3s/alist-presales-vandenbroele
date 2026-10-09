@@ -40,7 +40,7 @@
     ["t06", "Vergoedingen voor OCMW-personeel", "Barema's en toelagen", ["Lies Hendrickx"], "Lokaal personeelsbeleid | HRMConnect", ["OCMW"], "Boek", 45.0, 2026, 288, "v"],
     ["t07", "Verkeersmisdrijven voor politiediensten", "Vaststelling en proces-verbaal", ["Pieter Goossens", "Nele Vandamme"], "Gerechtelijk recht", ["Politie"], "Boek", 62.0, 2026, 460, "b"],
     ["t08", "Brandweerzones: organisatie en financiering", "Rechtspositie en dotaties", ["Wim Lauwers"], "Lokale financiën | FinConnect", ["Brandweer", "Gemeente", "Provincie"], "Boek", 52.0, 2025, 336, "v"],
-    ["t09", "Gemeentelijke begroting en beleidsplanning", "Beleids- en beheerscyclus uitgelegd", ["Sofie Dhondt"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW"], "Boek", 68.0, 2026, 520, "v"],
+    ["t09", "Gemeentelijke begroting en beleidsplanning", "Beleids- en beheerscyclus uitgelegd", ["Sofie Dhondt"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW", "Politie"], "Boek", 68.0, 2026, 520, "v"],
     ["t10", "Omgevingsvergunning stap voor stap", "Procedure en bezwaren", ["Anke Verhaeghe", "Bart Lemmens"], "Omgeving | OmgevingConnect", ["Gemeente", "Provincie"], "Boek", 79.0, 2026, 604, "v"],
     ["t11", "Maatschappelijke dienstverlening in het OCMW", "Recht op steun en toelagen", ["Griet Michiels"], "Welzijn en zorg", ["OCMW"], "Boek", 54.0, 2025, 372, "v"],
     ["t12", "Akten en aktebeheer voor notarissen", "Hypotheek, schenking en erfenis", ["Luc Baert"], "Burgerlijk recht", ["Notaris"], "Boek", 110.0, 2026, 860, "b"],
@@ -56,7 +56,7 @@
     ["t22", "Verbouwen en beschermd erfgoed", "Toelating, subsidie en toezicht", ["Maarten Cools"], "Omgeving | OmgevingConnect", ["Gemeente", "Provincie"], "Boek", 64.0, 2025, 380, "v"],
     ["t23", "Vrijwilligerswerk in lokale besturen", "Verzekering en vergoeding", ["Annelies Rombouts"], "Welzijn en zorg", ["Gemeente", "OCMW"], "Boek", 36.0, 2025, 184, "v"],
     ["t24", "Rechten van de verdediging: de basisgids", "Voor gemeentelijke sanctieambtenaren", ["Stijn Robbrecht"], "Gerechtelijk recht", ["Gemeente", "Politie"], "Boek", 47.0, 2026, 262, "v"],
-    ["t25", "Boekhouding voor lokale besturen", "BBC, balans en rekening", ["Claudia Mertens", "Rik Hoste"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW", "Provincie"], "Boek", 92.0, 2026, 704, "v"],
+    ["t25", "Boekhouding voor lokale besturen", "BBC, balans en rekening", ["Claudia Mertens", "Rik Hoste"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW", "Provincie", "Politie"], "Boek", 92.0, 2026, 704, "v"],
     ["t26", "Ontslag en schorsing van contractuelen", "Procedure stap voor stap", ["Dirk Claeys", "Eva Lambrecht"], "Arbeidsrecht", ["Gemeente", "OCMW", "Provincie"], "Boek", 53.0, 2026, 298, "v"],
     ["t27", "Zorgvuldig besturen: integriteit en klachten", "Praktijkgids voor lokale besturen", ["Hilde Van den Berghe"], "Welzijn en zorg", ["Gemeente", "OCMW", "Provincie"], "Boek", 39.0, 2024, 208, "v"],
     ["t28", "Overheidsopdrachten: modeldocumenten", "Bestekken, gunningsverslagen, brieven", ["Els Peeters"], "Overheidsopdrachten", ["Gemeente", "OCMW"], "Boek", 74.0, 2026, 520, "b"],
@@ -71,7 +71,7 @@
     ["t37", "Wetgeving lokale besturen op cd-rom", "Volledige zoekbare uitgave", ["Redactie"], "Lokale organisatie en werking | MATConnect", ["Gemeente", "OCMW", "Provincie"], "Cd-rom", 89.0, 2026, 0, "v"],
     ["t38", "Gemeentedecreet geannoteerd", "Editie 2026 als e-boek", ["An Verstraete", "Joris De Smet"], "Lokale organisatie en werking | MATConnect", ["Gemeente", "OCMW", "Provincie"], "E-boek (ePub)", 67.0, 2026, 912, "d"],
     ["t39", "Arbeidsrecht in de lokale besturen", "Statuut, evaluatie en ontslag als e-boek", ["Dirk Claeys"], "Lokaal personeelsbeleid | HRMConnect", ["Gemeente", "OCMW"], "E-boek (ePub)", 56.0, 2026, 640, "d"],
-    ["t40", "Tijdschrift voor lokale financiën", "Actualiteit en rechtspraak", ["Redactie"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW", "Provincie"], "Tijdschrift", 142.0, 2026, 0, "v"],
+    ["t40", "Tijdschrift voor lokale financiën", "Actualiteit en rechtspraak", ["Redactie"], "Lokale financiën | FinConnect", ["Gemeente", "OCMW", "Provincie", "Politie"], "Tijdschrift", 142.0, 2026, 0, "v"],
     ["t41", "Omgeving en vergunningen", "Tijdschrift voor lokale besturen", ["Redactie"], "Omgeving | OmgevingConnect", ["Gemeente", "Provincie"], "Tijdschrift", 118.0, 2026, 0, "v"]
   ];
 
@@ -97,19 +97,26 @@
     var p = a.split(" ");
     return p.length < 2 ? a : p.slice(1).join(" ") + " " + p[0][0] + ".";
   }
-  function rollen(materie, doel) {
-    var out = [], base = ROLE_BY_MATERIE[materie] || [];
-    base.forEach(function (r) {
-      if (r === "Bijzonder rekenplichtige") { if (doel.indexOf("Politie") >= 0) out.push(r); return; }
-      if (doel.indexOf("Gemeente") >= 0 && ROLLEN.Gemeente.indexOf(r) >= 0) out.push(r);
-      if (doel.indexOf("OCMW") >= 0 && ROLLEN.OCMW.indexOf(r + " (OCMW)") >= 0) out.push(r + " (OCMW)");
+  // Every title gets exactly one sub-role per parent group it belongs to,
+  // so a parent's count always equals the sum of its sub-roles.
+  function rollen(materie, doel, i) {
+    var out = [], hint = ROLE_BY_MATERIE[materie] || [];
+    ["Gemeente", "OCMW", "Politie"].forEach(function (p) {
+      if (doel.indexOf(p) < 0) return;
+      var list = ROLLEN[p], cand = [];
+      hint.forEach(function (r) { var v = p === "OCMW" ? r + " (OCMW)" : r; if (list.indexOf(v) >= 0) cand.push(v); });
+      out.push(cand.length ? cand[i % cand.length] : list[i % list.length]);
     });
     return out;
   }
 
+  // Groups without sub-roles that follow from the subject.
+  var EXTRA_GROUP = { "Lokaal personeelsbeleid | HRMConnect": "HR-manager", "Gerechtelijk recht": "Magistraat" };
+  function withExtra(materie, doel) { return EXTRA_GROUP[materie] && doel.indexOf(EXTRA_GROUP[materie]) < 0 ? doel.concat(EXTRA_GROUP[materie]) : doel; }
+
   var TITLES = RAW.map(function (r, i) {
     return {
-      id: r[0], title: r[1], sub: r[2], authors: r[3].map(fmtAuthor), materie: r[4], doelgroepen: r[5], rollen: rollen(r[4], r[5]),
+      id: r[0], title: r[1], sub: r[2], authors: r[3].map(fmtAuthor), materie: r[4], doelgroepen: withExtra(r[4], r[5]), rollen: rollen(r[4], r[5], i),
       vorm: r[6], price: r[7], year: r[8], pages: r[9], stock: r[10], connect: (r[4].split(" | ")[1] || null),
       isbn: isbn13(100000 + i * 137), desc: DESC[r[4]] || DESC.def, tone: TONES[r[4]], order: i
     };
