@@ -49,6 +49,24 @@ Open http://localhost:3000. Je krijgt dezelfde inlogpagina als online.
 
 `.env.local` staat in `.gitignore`. Zet nooit een wachtwoord in git.
 
+### Server stoppen
+
+Druk in het terminalvenster waarin de server draait op **Ctrl+C**. Dat geldt voor `python -m http.server`, `npx serve` en `npx vercel dev`.
+
+Draait de server op de achtergrond of is het venster al gesloten, zoek dan het proces dat poort 8765 (of 3000 bij `vercel dev`) gebruikt en stop het.
+
+PowerShell:
+
+```
+Stop-Process -Id (Get-NetTCPConnection -LocalPort 8765).OwningProcess
+```
+
+macOS/Linux:
+
+```
+kill $(lsof -ti :8765)
+```
+
 ## Wachtwoordbeveiliging
 
 `middleware.js` is een Vercel Routing Middleware (Edge runtime) die vóór elk verzoek draait.
